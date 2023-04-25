@@ -156,7 +156,7 @@
             editButton.Name = "editButton";
             editButton.Size = new Size(75, 31);
             editButton.TabIndex = 6;
-            editButton.Text = "EDIT";
+            editButton.Text = "Edit";
             editButton.UseVisualStyleBackColor = true;
             // 
             // DelButton
