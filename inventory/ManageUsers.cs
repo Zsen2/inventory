@@ -30,7 +30,7 @@ namespace inventory
             try
             {
                 Con.Open();
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM [Table]", Con);
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM [UserTable]", Con);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 dataGridView1.DataSource = dt;
@@ -53,7 +53,7 @@ namespace inventory
             try
             {
                 Con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO [Table] (Username, Password, FullName, PhoneNum) VALUES (@username, @password, @fullname, @phone)", Con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO [UserTable] (Username, Password, FullName, PhoneNum) VALUES (@username, @password, @fullname, @phone)", Con);
                 cmd.Parameters.AddWithValue("@username", userTB.Text);
                 cmd.Parameters.AddWithValue("@password", passTB.Text);
                 cmd.Parameters.AddWithValue("@fullname", fullNameTB.Text);
@@ -73,7 +73,7 @@ namespace inventory
             try
             {
                 Con.Open();
-                SqlCommand cmd = new SqlCommand("DELETE FROM [Table] WHERE FullName=@fullname", Con);
+                SqlCommand cmd = new SqlCommand("DELETE FROM [UserTable] WHERE FullName=@fullname", Con);
                 cmd.Parameters.AddWithValue("@fullname", fullNameTB.Text);
                 cmd.ExecuteNonQuery();
                 Con.Close();
@@ -93,6 +93,26 @@ namespace inventory
             fullNameTB.Text = row.Cells["FullName"].Value.ToString();
             numTB.Text = row.Cells["PhoneNum"].Value.ToString();
 
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Con.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE [UserTable] SET Password=@password, Username=@username, PhoneNum=@phone WHERE FullName=@fullname", Con);
+                cmd.Parameters.AddWithValue("@password", passTB.Text);
+                cmd.Parameters.AddWithValue("@fullname", fullNameTB.Text);
+                cmd.Parameters.AddWithValue("@phone", numTB.Text);
+                cmd.Parameters.AddWithValue("@username", userTB.Text);
+                cmd.ExecuteNonQuery();
+                Con.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Update failed");
+            }
+            populate();
         }
     }
 }
