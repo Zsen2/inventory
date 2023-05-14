@@ -18,7 +18,7 @@ namespace inventory
             InitializeComponent();
         }
 
-        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Documents\InventoryDB.mdf;Integrated Security=True;Connect Timeout=30");
+        private readonly string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Documents\InventoryDB.mdf;Integrated Security=True;Connect Timeout=30";
 
         private void ManageUsers_Load(object sender, EventArgs e)
         {
@@ -29,16 +29,16 @@ namespace inventory
         {
             try
             {
-                Con.Open();
-                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM [UserTable]", Con);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                dataGridView1.DataSource = dt;
-                Con.Close();
+                using (SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM [UserTable]", connectionString))
+                {
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                }
             }
-            catch
+            catch (Exception ex)
             {
-
+                MessageBox.Show("Error occurred while populating data: " + ex.Message);
             }
         }
 
@@ -52,18 +52,20 @@ namespace inventory
 
             try
             {
-                Con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO [UserTable] (Username, Password, FullName, PhoneNum) VALUES (@username, @password, @fullname, @phone)", Con);
-                cmd.Parameters.AddWithValue("@username", userTB.Text);
-                cmd.Parameters.AddWithValue("@password", passTB.Text);
-                cmd.Parameters.AddWithValue("@fullname", fullNameTB.Text);
-                cmd.Parameters.AddWithValue("@phone", numTB.Text);
-                cmd.ExecuteNonQuery();
-                Con.Close();
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    SqlCommand cmd = new SqlCommand("INSERT INTO [UserTable] (Username, Password, FullName, PhoneNum) VALUES (@username, @password, @fullname, @phone)", connection);
+                    cmd.Parameters.AddWithValue("@username", userTB.Text);
+                    cmd.Parameters.AddWithValue("@password", passTB.Text);
+                    cmd.Parameters.AddWithValue("@fullname", fullNameTB.Text);
+                    cmd.Parameters.AddWithValue("@phone", numTB.Text);
+                    cmd.ExecuteNonQuery();
+                }
             }
-            catch
+            catch (SqlException ex)
             {
-                MessageBox.Show("User Already Existed");
+                MessageBox.Show("User Already Exists or Error occurred: " + ex.Message);
             }
             populate();
         }
@@ -72,14 +74,17 @@ namespace inventory
         {
             try
             {
-                Con.Open();
-                SqlCommand cmd = new SqlCommand("DELETE FROM [UserTable] WHERE FullName=@fullname", Con);
-                cmd.Parameters.AddWithValue("@fullname", fullNameTB.Text);
-                cmd.ExecuteNonQuery();
-                Con.Close();
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    SqlCommand cmd = new SqlCommand("DELETE FROM [UserTable] WHERE FullName=@fullname", connection);
+                    cmd.Parameters.AddWithValue("@fullname", fullNameTB.Text);
+                    cmd.ExecuteNonQuery();
+                }
             }
-            catch
+            catch (SqlException ex)
             {
+                MessageBox.Show("Error occurred: " + ex.Message);
             }
             populate();
 
@@ -87,7 +92,7 @@ namespace inventory
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
             userTB.Text = row.Cells["Username"].Value.ToString();
             passTB.Text = row.Cells["Password"].Value.ToString();
             fullNameTB.Text = row.Cells["FullName"].Value.ToString();
@@ -99,18 +104,20 @@ namespace inventory
         {
             try
             {
-                Con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE [UserTable] SET Password=@password, Username=@username, PhoneNum=@phone WHERE FullName=@fullname", Con);
-                cmd.Parameters.AddWithValue("@password", passTB.Text);
-                cmd.Parameters.AddWithValue("@fullname", fullNameTB.Text);
-                cmd.Parameters.AddWithValue("@phone", numTB.Text);
-                cmd.Parameters.AddWithValue("@username", userTB.Text);
-                cmd.ExecuteNonQuery();
-                Con.Close();
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    SqlCommand cmd = new SqlCommand("UPDATE [UserTable] SET Password=@password, Username=@username, PhoneNum=@phone WHERE FullName=@fullname", connection);
+                    cmd.Parameters.AddWithValue("@password", passTB.Text);
+                    cmd.Parameters.AddWithValue("@fullname", fullNameTB.Text);
+                    cmd.Parameters.AddWithValue("@phone", numTB.Text);
+                    cmd.Parameters.AddWithValue("@username", userTB.Text);
+                    cmd.ExecuteNonQuery();
+                }
             }
-            catch
+            catch (SqlException ex)
             {
-                MessageBox.Show("Update failed");
+                MessageBox.Show("Error occurred: " + ex.Message);
             }
             populate();
         }

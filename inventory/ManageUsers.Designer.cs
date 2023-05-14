@@ -107,7 +107,7 @@
             // 
             // userTB
             // 
-            userTB.Location = new Point(43, 200);
+            userTB.Location = new Point(60, 201);
             userTB.Multiline = true;
             userTB.Name = "userTB";
             userTB.Size = new Size(135, 30);
@@ -116,7 +116,7 @@
             // 
             // passTB
             // 
-            passTB.Location = new Point(43, 236);
+            passTB.Location = new Point(60, 237);
             passTB.Multiline = true;
             passTB.Name = "passTB";
             passTB.Size = new Size(135, 30);
@@ -125,7 +125,7 @@
             // 
             // fullNameTB
             // 
-            fullNameTB.Location = new Point(43, 272);
+            fullNameTB.Location = new Point(60, 273);
             fullNameTB.Multiline = true;
             fullNameTB.Name = "fullNameTB";
             fullNameTB.Size = new Size(135, 30);
@@ -134,7 +134,7 @@
             // 
             // numTB
             // 
-            numTB.Location = new Point(43, 308);
+            numTB.Location = new Point(60, 309);
             numTB.Multiline = true;
             numTB.Name = "numTB";
             numTB.Size = new Size(135, 30);
