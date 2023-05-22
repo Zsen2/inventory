@@ -85,6 +85,7 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = Color.DarkSlateBlue;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(60, 153);
             dataGridView1.Name = "dataGridView1";
@@ -138,6 +139,7 @@
             // 
             // dataGridView2
             // 
+            dataGridView2.BackgroundColor = Color.DarkSlateBlue;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Location = new Point(449, 153);
             dataGridView2.Name = "dataGridView2";
@@ -194,6 +196,7 @@
             // 
             // dataGridView3
             // 
+            dataGridView3.BackgroundColor = Color.DarkSlateBlue;
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView3.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
             dataGridView3.Location = new Point(510, 497);

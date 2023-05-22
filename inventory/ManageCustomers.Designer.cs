@@ -83,6 +83,7 @@
             // 
             // cusGV
             // 
+            cusGV.BackgroundColor = Color.DarkSlateBlue;
             cusGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             cusGV.Location = new Point(337, 169);
             cusGV.Name = "cusGV";

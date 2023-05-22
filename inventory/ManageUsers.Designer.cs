@@ -193,6 +193,7 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = Color.DarkSlateBlue;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(331, 171);
             dataGridView1.Name = "dataGridView1";
