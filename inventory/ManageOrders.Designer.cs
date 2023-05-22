@@ -68,7 +68,7 @@
             panel3.Dock = DockStyle.Bottom;
             panel3.Location = new Point(0, 802);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1135, 10);
+            panel3.Size = new Size(1157, 10);
             panel3.TabIndex = 24;
             // 
             // label3
@@ -305,7 +305,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1135, 100);
+            panel2.Size = new Size(1157, 100);
             panel2.TabIndex = 23;
             // 
             // button3
@@ -322,9 +322,10 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1135, 812);
+            ClientSize = new Size(1157, 812);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);

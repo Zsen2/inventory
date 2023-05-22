@@ -192,11 +192,11 @@
             // 
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
             label6.ForeColor = SystemColors.Control;
-            label6.Location = new Point(294, 363);
+            label6.Location = new Point(279, 364);
             label6.Name = "label6";
-            label6.Size = new Size(65, 19);
+            label6.Size = new Size(97, 28);
             label6.TabIndex = 22;
             label6.Text = "Log out";
             label6.Click += label6_Click;
