@@ -51,8 +51,7 @@ namespace inventory
             try
             {
                 Con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO [CustomerTB] (CustomerID, CustomerName, CustomerNum) VALUES (@id, @name, @number)", Con);
-                cmd.Parameters.AddWithValue("@id", cusID.Text);
+                SqlCommand cmd = new SqlCommand("INSERT INTO [CustomerTB] (CustomerName, CustomerNum) VALUES (@name, @number)", Con);
                 cmd.Parameters.AddWithValue("@name", cusName.Text);
                 cmd.Parameters.AddWithValue("@number", cusNum.Text);
                 cmd.ExecuteNonQuery();
@@ -112,6 +111,12 @@ namespace inventory
                 MessageBox.Show("Update failed");
             }
             populate();
+        }
+
+        private void homeButton_Click(object sender, EventArgs e)
+        {
+            new Home().Show();
+            this.Hide();
         }
     }
 }

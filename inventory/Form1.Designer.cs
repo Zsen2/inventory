@@ -34,17 +34,19 @@
             passTB = new TextBox();
             userTB = new TextBox();
             label1 = new Label();
+            label2 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(label2);
             panel1.Controls.Add(showPass);
             panel1.Controls.Add(logButton);
             panel1.Controls.Add(passTB);
             panel1.Controls.Add(userTB);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(43, 41);
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(236, 287);
             panel1.TabIndex = 0;
@@ -74,36 +76,48 @@
             // 
             passTB.Location = new Point(28, 141);
             passTB.Name = "passTB";
+            passTB.PlaceholderText = "Password";
             passTB.Size = new Size(178, 23);
             passTB.TabIndex = 2;
-            passTB.Text = "Password";
             passTB.UseSystemPasswordChar = true;
             // 
             // userTB
             // 
             userTB.Location = new Point(28, 112);
             userTB.Name = "userTB";
+            userTB.PlaceholderText = "Username";
             userTB.Size = new Size(178, 23);
             userTB.TabIndex = 1;
-            userTB.Text = "Username";
             userTB.TextChanged += userTB_TextChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(81, 21);
+            label1.Location = new Point(79, 37);
             label1.Name = "label1";
             label1.Size = new Size(78, 32);
             label1.TabIndex = 0;
             label1.Text = "Login";
             label1.Click += label1_Click;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Century Gothic", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.DarkRed;
+            label2.Location = new Point(204, -11);
+            label2.Name = "label2";
+            label2.Size = new Size(32, 39);
+            label2.TabIndex = 3;
+            label2.Text = "x";
+            label2.Click += label2_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(326, 388);
+            ClientSize = new Size(236, 288);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
@@ -123,5 +137,6 @@
         private Button logButton;
         private TextBox passTB;
         private TextBox userTB;
+        private Label label2;
     }
 }

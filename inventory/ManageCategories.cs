@@ -47,8 +47,7 @@ namespace inventory
             try
             {
                 Con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO [CatTB] (CatID, CatName) VALUES (@id, @name)", Con);
-                cmd.Parameters.AddWithValue("@id", catID.Text);
+                SqlCommand cmd = new SqlCommand("INSERT INTO [CatTB] (CatName) VALUES (@name)", Con);
                 cmd.Parameters.AddWithValue("@name", catName.Text);
                 cmd.ExecuteNonQuery();
                 Con.Close();
@@ -110,6 +109,12 @@ namespace inventory
         private void ManageCategories_Load(object sender, EventArgs e)
         {
             populate();
+        }
+
+        private void homeButton_Click(object sender, EventArgs e)
+        {
+            new Home().Show();
+            this.Hide();
         }
     }
 }

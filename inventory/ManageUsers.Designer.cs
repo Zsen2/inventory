@@ -110,36 +110,36 @@
             userTB.Location = new Point(60, 201);
             userTB.Multiline = true;
             userTB.Name = "userTB";
+            userTB.PlaceholderText = "Username";
             userTB.Size = new Size(135, 30);
             userTB.TabIndex = 1;
-            userTB.Text = "Username";
             // 
             // passTB
             // 
             passTB.Location = new Point(60, 237);
             passTB.Multiline = true;
             passTB.Name = "passTB";
+            passTB.PlaceholderText = "Password";
             passTB.Size = new Size(135, 30);
             passTB.TabIndex = 2;
-            passTB.Text = "Password";
             // 
             // fullNameTB
             // 
             fullNameTB.Location = new Point(60, 273);
             fullNameTB.Multiline = true;
             fullNameTB.Name = "fullNameTB";
+            fullNameTB.PlaceholderText = "Full Name";
             fullNameTB.Size = new Size(135, 30);
             fullNameTB.TabIndex = 3;
-            fullNameTB.Text = "FullName";
             // 
             // numTB
             // 
             numTB.Location = new Point(60, 309);
             numTB.Multiline = true;
             numTB.Name = "numTB";
+            numTB.PlaceholderText = "Phone Number";
             numTB.Size = new Size(135, 30);
             numTB.TabIndex = 4;
-            numTB.Text = "Phone Number";
             // 
             // addButton
             // 
@@ -179,6 +179,7 @@
             homeButton.TabIndex = 8;
             homeButton.Text = "Home";
             homeButton.UseVisualStyleBackColor = true;
+            homeButton.Click += homeButton_Click;
             // 
             // panel3
             // 

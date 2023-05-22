@@ -107,7 +107,7 @@
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(653, 366);
             dataGridView1.TabIndex = 23;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.CellClick += dataGridView1_CellContentClick;
             // 
             // panel3
             // 
@@ -126,6 +126,7 @@
             homeButton.TabIndex = 21;
             homeButton.Text = "Home";
             homeButton.UseVisualStyleBackColor = true;
+            homeButton.Click += homeButton_Click;
             // 
             // DelButton
             // 
@@ -162,45 +163,46 @@
             prodPrice.Location = new Point(60, 266);
             prodPrice.Multiline = true;
             prodPrice.Name = "prodPrice";
+            prodPrice.PlaceholderText = "Price";
             prodPrice.Size = new Size(135, 30);
             prodPrice.TabIndex = 17;
-            prodPrice.Text = "ProductPrice";
             // 
             // prodQT
             // 
             prodQT.Location = new Point(60, 230);
             prodQT.Multiline = true;
             prodQT.Name = "prodQT";
+            prodQT.PlaceholderText = "Quantity";
             prodQT.Size = new Size(135, 30);
             prodQT.TabIndex = 16;
-            prodQT.Text = "ProductQTY";
             // 
             // prodName
             // 
             prodName.Location = new Point(60, 194);
             prodName.Multiline = true;
             prodName.Name = "prodName";
+            prodName.PlaceholderText = "Product Name";
             prodName.Size = new Size(135, 30);
             prodName.TabIndex = 15;
-            prodName.Text = "ProductName";
             // 
             // prodID
             // 
             prodID.Location = new Point(60, 158);
             prodID.Multiline = true;
             prodID.Name = "prodID";
+            prodID.PlaceholderText = "Product ID";
+            prodID.ReadOnly = true;
             prodID.Size = new Size(135, 30);
             prodID.TabIndex = 13;
-            prodID.Text = "ProductID";
             // 
             // desc
             // 
             desc.Location = new Point(60, 302);
             desc.Multiline = true;
             desc.Name = "desc";
+            desc.PlaceholderText = "Description";
             desc.Size = new Size(135, 30);
             desc.TabIndex = 24;
-            desc.Text = "Description";
             // 
             // comboBox1
             // 

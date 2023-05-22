@@ -119,6 +119,7 @@
             homeButton.TabIndex = 31;
             homeButton.Text = "Home";
             homeButton.UseVisualStyleBackColor = true;
+            homeButton.Click += homeButton_Click;
             // 
             // DelButton
             // 

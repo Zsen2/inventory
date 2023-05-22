@@ -91,6 +91,7 @@ namespace inventory
             desc.Text = row.Cells["ProdDesc"].Value.ToString();
             comboBox1.Text = row.Cells["ProdManufac"].Value.ToString();
             prodID.Text = row.Cells["ProdID"].Value.ToString();
+            dataGridView1.CurrentRow.Selected = true;
         }
 
         private void exit_Click(object sender, EventArgs e)
@@ -109,14 +110,21 @@ namespace inventory
             try
             {
                 Con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO [ProductTB] (ProdID, ProdName, ProdQTY, ProdPrice, ProdDesc, ProdManufac) VALUES (@id, @name, @qty, @price, @desc, @manufac)", Con);
-                cmd.Parameters.AddWithValue("@id", prodID.Text);
+
+                // Insert into ProductTB table
+                SqlCommand cmd = new SqlCommand("INSERT INTO [ProductTB] (ProdName, ProdQTY, ProdPrice, ProdDesc, ProdManufac) VALUES (@name, @qty, @price, @desc, @manufac)", Con);
                 cmd.Parameters.AddWithValue("@name", prodName.Text);
                 cmd.Parameters.AddWithValue("@qty", prodQT.Text);
                 cmd.Parameters.AddWithValue("@price", prodPrice.Text);
                 cmd.Parameters.AddWithValue("@desc", desc.Text);
                 cmd.Parameters.AddWithValue("@manufac", comboBox1.Text);
                 cmd.ExecuteNonQuery();
+
+                // Insert into CatTB table
+                SqlCommand cmd2 = new SqlCommand("INSERT INTO [CatTB] (CatName) VALUES (@name)", Con);
+                cmd2.Parameters.AddWithValue("@name", comboBox1.Text);
+                cmd2.ExecuteNonQuery();
+
                 Con.Close();
             }
             catch (Exception ex)
@@ -145,6 +153,7 @@ namespace inventory
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                Con.Close();
             }
             populate();
         }
@@ -178,6 +187,12 @@ namespace inventory
         private void button2_Click(object sender, EventArgs e)
         {
             populate();
+        }
+
+        private void homeButton_Click(object sender, EventArgs e)
+        {
+            new Home().Show();
+            this.Hide();
         }
     }
 }

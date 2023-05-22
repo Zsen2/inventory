@@ -90,6 +90,7 @@
             cusGV.RowTemplate.Height = 25;
             cusGV.Size = new Size(364, 366);
             cusGV.TabIndex = 22;
+            cusGV.CellClick += cusGV_CellContentClick;
             cusGV.CellContentClick += cusGV_CellContentClick;
             // 
             // panel3
@@ -109,6 +110,7 @@
             homeButton.TabIndex = 20;
             homeButton.Text = "Home";
             homeButton.UseVisualStyleBackColor = true;
+            homeButton.Click += homeButton_Click;
             // 
             // DelButton
             // 
@@ -145,27 +147,28 @@
             cusNum.Location = new Point(60, 276);
             cusNum.Multiline = true;
             cusNum.Name = "cusNum";
+            cusNum.PlaceholderText = "Phone Number";
             cusNum.Size = new Size(135, 30);
             cusNum.TabIndex = 16;
-            cusNum.Text = "Phone Number";
             // 
             // cusName
             // 
             cusName.Location = new Point(60, 240);
             cusName.Multiline = true;
             cusName.Name = "cusName";
+            cusName.PlaceholderText = "Name";
             cusName.Size = new Size(135, 30);
             cusName.TabIndex = 14;
-            cusName.Text = "Name";
             // 
             // cusID
             // 
             cusID.Location = new Point(60, 204);
             cusID.Multiline = true;
             cusID.Name = "cusID";
+            cusID.PlaceholderText = "ID";
+            cusID.ReadOnly = true;
             cusID.Size = new Size(135, 30);
             cusID.TabIndex = 13;
-            cusID.Text = "ID";
             // 
             // label3
             // 
