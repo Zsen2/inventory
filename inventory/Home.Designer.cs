@@ -41,7 +41,7 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            homeButton = new Button();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -51,6 +51,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(85, 194);
             pictureBox1.Name = "pictureBox1";
@@ -62,6 +63,7 @@
             // 
             // pictureBox2
             // 
+            pictureBox2.BackColor = Color.Transparent;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(213, 194);
             pictureBox2.Name = "pictureBox2";
@@ -73,6 +75,7 @@
             // 
             // pictureBox3
             // 
+            pictureBox3.BackColor = Color.Transparent;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
             pictureBox3.Location = new Point(347, 194);
             pictureBox3.Name = "pictureBox3";
@@ -84,6 +87,7 @@
             // 
             // pictureBox4
             // 
+            pictureBox4.BackColor = Color.Transparent;
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
             pictureBox4.Location = new Point(458, 173);
             pictureBox4.Name = "pictureBox4";
@@ -104,7 +108,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.DodgerBlue;
+            panel2.BackColor = Color.RoyalBlue;
             panel2.Controls.Add(exit);
             panel2.Controls.Add(label2);
             panel2.Dock = DockStyle.Top;
@@ -139,8 +143,9 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.Highlight;
+            label1.ForeColor = SystemColors.Control;
             label1.Location = new Point(84, 270);
             label1.Name = "label1";
             label1.Size = new Size(74, 19);
@@ -150,8 +155,9 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
             label3.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = SystemColors.Highlight;
+            label3.ForeColor = SystemColors.Control;
             label3.Location = new Point(234, 271);
             label3.Name = "label3";
             label3.Size = new Size(46, 19);
@@ -161,8 +167,9 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
             label4.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = SystemColors.Highlight;
+            label4.ForeColor = SystemColors.Control;
             label4.Location = new Point(353, 271);
             label4.Name = "label4";
             label4.Size = new Size(59, 19);
@@ -172,30 +179,36 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
             label5.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = SystemColors.Highlight;
+            label5.ForeColor = SystemColors.Control;
             label5.Location = new Point(481, 271);
             label5.Name = "label5";
             label5.Size = new Size(88, 19);
             label5.TabIndex = 15;
             label5.Text = "Customers";
             // 
-            // homeButton
+            // label6
             // 
-            homeButton.Location = new Point(289, 353);
-            homeButton.Name = "homeButton";
-            homeButton.Size = new Size(75, 31);
-            homeButton.TabIndex = 21;
-            homeButton.Text = "Log out";
-            homeButton.UseVisualStyleBackColor = true;
-            homeButton.Click += homeButton_Click;
+            label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
+            label6.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.ForeColor = SystemColors.Control;
+            label6.Location = new Point(294, 363);
+            label6.Name = "label6";
+            label6.Size = new Size(65, 19);
+            label6.TabIndex = 22;
+            label6.Text = "Log out";
+            label6.Click += label6_Click;
             // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(662, 464);
-            Controls.Add(homeButton);
+            Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -234,6 +247,6 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        private Button homeButton;
+        private Label label6;
     }
 }

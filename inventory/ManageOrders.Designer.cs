@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageOrders));
             panel3 = new Panel();
             label3 = new Label();
             dataGridView1 = new DataGridView();
@@ -73,8 +74,9 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
             label3.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = SystemColors.HotTrack;
+            label3.ForeColor = SystemColors.Control;
             label3.Location = new Point(163, 128);
             label3.Name = "label3";
             label3.Size = new Size(155, 22);
@@ -113,8 +115,9 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = SystemColors.HotTrack;
+            label1.ForeColor = SystemColors.ControlLightLight;
             label1.Location = new Point(128, 539);
             label1.Name = "label1";
             label1.Size = new Size(112, 23);
@@ -157,8 +160,9 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
             label4.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = SystemColors.HotTrack;
+            label4.ForeColor = SystemColors.ControlLightLight;
             label4.Location = new Point(691, 431);
             label4.Name = "label4";
             label4.Size = new Size(92, 22);
@@ -227,8 +231,9 @@
             // total
             // 
             total.AutoSize = true;
+            total.BackColor = Color.Transparent;
             total.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            total.ForeColor = SystemColors.HotTrack;
+            total.ForeColor = SystemColors.ControlLightLight;
             total.Location = new Point(677, 766);
             total.Name = "total";
             total.Size = new Size(138, 22);
@@ -291,7 +296,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.DodgerBlue;
+            panel2.BackColor = Color.RoyalBlue;
             panel2.Controls.Add(exit);
             panel2.Controls.Add(label2);
             panel2.Dock = DockStyle.Top;
@@ -314,6 +319,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1135, 812);
             Controls.Add(button3);
             Controls.Add(button2);

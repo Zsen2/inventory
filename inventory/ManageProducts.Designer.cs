@@ -28,12 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel2 = new Panel();
-            exit = new Label();
-            label2 = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageProducts));
             label3 = new Label();
             dataGridView1 = new DataGridView();
-            panel3 = new Panel();
             homeButton = new Button();
             DelButton = new Button();
             editButton = new Button();
@@ -47,49 +44,20 @@
             comboBox2 = new ComboBox();
             button1 = new Button();
             button2 = new Button();
-            panel2.SuspendLayout();
+            exit = new Label();
+            panel3 = new Panel();
+            panel2 = new Panel();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.DodgerBlue;
-            panel2.Controls.Add(exit);
-            panel2.Controls.Add(label2);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1044, 100);
-            panel2.TabIndex = 12;
-            // 
-            // exit
-            // 
-            exit.AutoSize = true;
-            exit.Font = new Font("Century Gothic", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            exit.ForeColor = Color.DarkRed;
-            exit.Location = new Point(1012, -10);
-            exit.Name = "exit";
-            exit.Size = new Size(32, 39);
-            exit.TabIndex = 1;
-            exit.Text = "x";
-            exit.Click += exit_Click;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(332, 24);
-            label2.Name = "label2";
-            label2.Size = new Size(338, 44);
-            label2.TabIndex = 0;
-            label2.Text = "Manage Products";
             // 
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
             label3.Font = new Font("Century Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = SystemColors.HotTrack;
+            label3.ForeColor = SystemColors.ControlLightLight;
             label3.Location = new Point(568, 125);
             label3.Name = "label3";
             label3.Size = new Size(187, 30);
@@ -108,15 +76,6 @@
             dataGridView1.Size = new Size(653, 366);
             dataGridView1.TabIndex = 23;
             dataGridView1.CellClick += dataGridView1_CellContentClick;
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.DodgerBlue;
-            panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(0, 601);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(1044, 10);
-            panel3.TabIndex = 22;
             // 
             // homeButton
             // 
@@ -245,20 +204,65 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // exit
+            // 
+            exit.AutoSize = true;
+            exit.Font = new Font("Century Gothic", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            exit.ForeColor = Color.DarkRed;
+            exit.Location = new Point(1012, -12);
+            exit.Name = "exit";
+            exit.Size = new Size(32, 39);
+            exit.TabIndex = 1;
+            exit.Text = "x";
+            exit.Click += exit_Click_1;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.DodgerBlue;
+            panel3.Dock = DockStyle.Bottom;
+            panel3.Location = new Point(0, 601);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1044, 10);
+            panel3.TabIndex = 32;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.RoyalBlue;
+            panel2.Controls.Add(exit);
+            panel2.Controls.Add(label1);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1044, 110);
+            panel2.TabIndex = 31;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.Control;
+            label1.Location = new Point(363, 40);
+            label1.Name = "label1";
+            label1.Size = new Size(338, 44);
+            label1.TabIndex = 0;
+            label1.Text = "Manage Products";
+            // 
             // ManageProducts
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1044, 611);
+            Controls.Add(panel3);
+            Controls.Add(panel2);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(comboBox2);
             Controls.Add(comboBox1);
             Controls.Add(desc);
-            Controls.Add(panel2);
             Controls.Add(label3);
             Controls.Add(dataGridView1);
-            Controls.Add(panel3);
             Controls.Add(homeButton);
             Controls.Add(DelButton);
             Controls.Add(editButton);
@@ -272,21 +276,16 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ManageProducts";
             Load += ManageProducts_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Panel panel2;
-        private Label exit;
-        private Label label2;
         private Label label3;
         private DataGridView dataGridView1;
-        private Panel panel3;
         private Button homeButton;
         private Button DelButton;
         private Button editButton;
@@ -300,5 +299,9 @@
         private ComboBox comboBox2;
         private Button button1;
         private Button button2;
+        private Label exit;
+        private Panel panel3;
+        private Panel panel2;
+        private Label label1;
     }
 }

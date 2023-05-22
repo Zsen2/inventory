@@ -194,5 +194,10 @@ namespace inventory
             new Home().Show();
             this.Hide();
         }
+
+        private void exit_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

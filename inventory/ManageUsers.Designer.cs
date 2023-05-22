@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageUsers));
             panel1 = new Panel();
             panel2 = new Panel();
             exit = new Label();
@@ -62,7 +63,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.DodgerBlue;
+            panel2.BackColor = Color.RoyalBlue;
             panel2.Controls.Add(exit);
             panel2.Controls.Add(label2);
             panel2.Dock = DockStyle.Top;
@@ -205,8 +206,9 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
             label3.Font = new Font("Century Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = SystemColors.HotTrack;
+            label3.ForeColor = SystemColors.ControlLightLight;
             label3.Location = new Point(490, 138);
             label3.Name = "label3";
             label3.Size = new Size(128, 30);
@@ -217,6 +219,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(831, 601);
             Controls.Add(label3);
             Controls.Add(dataGridView1);

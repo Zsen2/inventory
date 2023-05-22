@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageCategories));
             panel2 = new Panel();
             label1 = new Label();
             label2 = new Label();
@@ -46,7 +47,9 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.DodgerBlue;
+            panel2.BackColor = Color.DarkViolet;
+            panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
+            panel2.BackgroundImageLayout = ImageLayout.Stretch;
             panel2.Controls.Add(label1);
             panel2.Controls.Add(label2);
             panel2.Dock = DockStyle.Top;
@@ -72,7 +75,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.Control;
-            label2.Location = new Point(190, 27);
+            label2.Location = new Point(178, 27);
             label2.Name = "label2";
             label2.Size = new Size(429, 44);
             label2.TabIndex = 0;

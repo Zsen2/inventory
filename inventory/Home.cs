@@ -48,6 +48,11 @@ namespace inventory
 
         private void homeButton_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
             new Form1().Show();
             this.Hide();
         }
