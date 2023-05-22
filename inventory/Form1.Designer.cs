@@ -28,115 +28,119 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             showPass = new CheckBox();
-            logButton = new Button();
             passTB = new TextBox();
             userTB = new TextBox();
+            pictureBox1 = new PictureBox();
+            button1 = new Button();
             label1 = new Label();
-            label2 = new Label();
-            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(showPass);
-            panel1.Controls.Add(logButton);
-            panel1.Controls.Add(passTB);
-            panel1.Controls.Add(userTB);
-            panel1.Controls.Add(label1);
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(236, 287);
-            panel1.TabIndex = 0;
             // 
             // showPass
             // 
             showPass.AutoSize = true;
-            showPass.Location = new Point(98, 223);
+            showPass.BackColor = Color.CornflowerBlue;
+            showPass.FlatStyle = FlatStyle.Flat;
+            showPass.Location = new Point(116, 258);
             showPass.Name = "showPass";
-            showPass.Size = new Size(108, 19);
-            showPass.TabIndex = 4;
+            showPass.Size = new Size(105, 19);
+            showPass.TabIndex = 9;
             showPass.Text = "Show Password";
-            showPass.UseVisualStyleBackColor = true;
-            showPass.CheckedChanged += showPass_CheckedChanged;
-            // 
-            // logButton
-            // 
-            logButton.Location = new Point(28, 179);
-            logButton.Name = "logButton";
-            logButton.Size = new Size(178, 38);
-            logButton.TabIndex = 3;
-            logButton.Text = "Login";
-            logButton.UseVisualStyleBackColor = true;
-            logButton.Click += button1_Click;
+            showPass.UseVisualStyleBackColor = false;
+            showPass.CheckedChanged += showPass_CheckedChanged_1;
             // 
             // passTB
             // 
-            passTB.Location = new Point(28, 141);
+            passTB.BackColor = Color.LightGray;
+            passTB.BorderStyle = BorderStyle.None;
+            passTB.Location = new Point(83, 171);
             passTB.Name = "passTB";
             passTB.PlaceholderText = "Password";
-            passTB.Size = new Size(178, 23);
-            passTB.TabIndex = 2;
+            passTB.Size = new Size(141, 16);
+            passTB.TabIndex = 7;
             passTB.UseSystemPasswordChar = true;
             // 
             // userTB
             // 
-            userTB.Location = new Point(28, 112);
+            userTB.BackColor = Color.LightGray;
+            userTB.BorderStyle = BorderStyle.None;
+            userTB.Location = new Point(83, 137);
             userTB.Name = "userTB";
             userTB.PlaceholderText = "Username";
-            userTB.Size = new Size(178, 23);
-            userTB.TabIndex = 1;
-            userTB.TextChanged += userTB_TextChanged;
+            userTB.Size = new Size(143, 16);
+            userTB.TabIndex = 6;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(276, 363);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 12;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.HotPink;
+            button1.BackgroundImageLayout = ImageLayout.Center;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Location = new Point(54, 207);
+            button1.Name = "button1";
+            button1.Size = new Size(170, 23);
+            button1.TabIndex = 13;
+            button1.Text = "Login";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(79, 37);
+            label1.BackColor = Color.IndianRed;
+            label1.Font = new Font("Century Gothic", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.DarkRed;
+            label1.Location = new Point(244, -9);
             label1.Name = "label1";
-            label1.Size = new Size(78, 32);
-            label1.TabIndex = 0;
-            label1.Text = "Login";
-            label1.Click += label1_Click;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.DarkRed;
-            label2.Location = new Point(204, -11);
-            label2.Name = "label2";
-            label2.Size = new Size(32, 39);
-            label2.TabIndex = 3;
-            label2.Text = "x";
-            label2.Click += label2_Click;
+            label1.Size = new Size(32, 39);
+            label1.TabIndex = 14;
+            label1.Text = "x";
+            label1.Click += label1_Click_1;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(236, 288);
-            Controls.Add(panel1);
+            ClientSize = new Size(276, 363);
+            Controls.Add(label1);
+            Controls.Add(button1);
+            Controls.Add(showPass);
+            Controls.Add(passTB);
+            Controls.Add(userTB);
+            Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private Panel panel1;
-        private Label label1;
         private CheckBox showPass;
         private Button logButton;
         private TextBox passTB;
         private TextBox userTB;
-        private Label label2;
+        private PictureBox pictureBox1;
+        private Button button1;
+        private Label label1;
     }
 }

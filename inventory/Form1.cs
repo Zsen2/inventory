@@ -24,31 +24,12 @@ namespace inventory
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string username = userTB.Text;
-            string password = passTB.Text;
 
-            if (AuthenticateUser(username, password))
-            {
-                new Home().Show();
-                this.Hide();
-                // Redirect to the main application or perform other actions
-            }
-            else
-            {
-                MessageBox.Show("Invalid username or password. Please try again.");
-            }
         }
 
         private void showPass_CheckedChanged(object sender, EventArgs e)
         {
-            if (showPass.Checked == true)
-            {
-                passTB.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                passTB.UseSystemPasswordChar = true;
-            }
+
         }
 
         private void userTB_TextChanged(object sender, EventArgs e)
@@ -77,6 +58,60 @@ namespace inventory
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void userTB_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void logButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void showPass_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (showPass.Checked == true)
+            {
+                passTB.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                passTB.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string username = userTB.Text;
+            string password = passTB.Text;
+
+            if (AuthenticateUser(username, password))
+            {
+                new Home().Show();
+                this.Hide();
+                // Redirect to the main application or perform other actions
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password. Please try again.");
+            }
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
         }
